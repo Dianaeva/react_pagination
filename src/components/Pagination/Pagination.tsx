@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import cn from 'classnames';
 
 import { PageItem } from './PageItem';
@@ -17,6 +17,9 @@ export const Pagination: React.FC<Props> = ({
   onPageChange,
 }) => {
   const totalPages = Math.ceil(total / perPage);
+  const pages = useMemo(() => {
+    return [...Array(totalPages)].map((_, i) => i + 1);
+  }, [totalPages]);
 
   return (
     <ul className="pagination">
@@ -33,9 +36,7 @@ export const Pagination: React.FC<Props> = ({
         }}
       />
 
-      {[...Array(totalPages)].map((_, i) => {
-        const page = i + 1;
-
+      {pages.map(page => {
         return (
           <PageItem
             title={page.toString()}
