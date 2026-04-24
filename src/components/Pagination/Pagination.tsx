@@ -26,7 +26,6 @@ export const Pagination: React.FC<Props> = ({
       <PageItem
         title="«"
         dataCy="prevLink"
-        href="#prev"
         ariaDisabled={currentPage === 1}
         className={cn({ disabled: currentPage === 1 })}
         onPageChange={() => {
@@ -41,7 +40,6 @@ export const Pagination: React.FC<Props> = ({
           <PageItem
             title={page.toString()}
             dataCy="pageLink"
-            href={`#${page}`}
             key={page}
             className={cn({ active: currentPage === page })}
             onPageChange={() => onPageChange(page)}
@@ -52,7 +50,6 @@ export const Pagination: React.FC<Props> = ({
       <PageItem
         title="»"
         dataCy="nextLink"
-        href="#next"
         ariaDisabled={currentPage === totalPages}
         className={cn({ disabled: currentPage === totalPages })}
         onPageChange={() => {

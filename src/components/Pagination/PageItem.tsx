@@ -6,7 +6,6 @@ type Props = {
   onPageChange: () => void;
   className?: string;
   dataCy: string;
-  href: string;
   ariaDisabled?: React.AriaAttributes['aria-disabled'];
 };
 
@@ -15,20 +14,18 @@ export const PageItem: React.FC<Props> = ({
   onPageChange,
   className,
   dataCy,
-  href,
   ariaDisabled,
 }) => {
   return (
     <li className={cn('page-item', className)}>
-      <a
+      <button
         data-cy={dataCy}
         className="page-link"
-        href={href}
         onClick={onPageChange}
         aria-disabled={ariaDisabled}
       >
         {title}
-      </a>
+      </button>
     </li>
   );
 };

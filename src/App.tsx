@@ -10,7 +10,6 @@ import { PerPageSelector } from './components/PerPageSelector';
 import { usePageSearchParams } from './hooks/usePageSearchParams';
 import { Info } from './components/Info';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const items = getNumbers(1, 42).map(n => `Item ${n}`);
 const optionsItemsPerPage: ItemsPerPage[] = [3, 5, 10, 20];
 
